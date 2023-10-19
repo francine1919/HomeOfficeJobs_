@@ -6,8 +6,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build",
-    "postbuild": "cp package*.json dist && (cd dist && npm ci --omit=dev --ignore-scripts)",
+    "build": "tsc",
+    "postbuild": "cp package*.json dist && cd dist && npm ci",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",

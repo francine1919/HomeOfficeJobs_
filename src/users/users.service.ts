@@ -3,7 +3,7 @@ import {
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
-import { UUID, randomUUID } from 'crypto';
+import { UUID, randomUUID } from 'node:crypto';
 import { HashManager } from 'src/commons/bcrypt';
 import { KnexService } from 'src/db/knex.service';
 import { UserSignup, UserLogin, UserAuthentication } from './dto/users.dto';

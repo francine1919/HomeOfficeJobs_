@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { UUID } from 'crypto';
+import { UUID } from 'node:crypto';
 import * as jwt from 'jsonwebtoken';
 
 export interface AuthenticationData {
