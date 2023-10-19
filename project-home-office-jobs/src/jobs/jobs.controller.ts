@@ -34,7 +34,7 @@ import { JobsService } from './jobs.service';
 export class JobsController {
   constructor(private readonly appService: JobsService) {}
 
-  @Get()
+  @Get('/health')
   getHello(): string {
     return this.appService.getHello();
   }

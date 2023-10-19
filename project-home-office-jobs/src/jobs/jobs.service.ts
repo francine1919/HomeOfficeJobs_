@@ -19,7 +19,7 @@ export class JobsService {
   tableJobs = 'JobOffers';
 
   getHello(): string {
-    return 'Hello World!';
+    return 'Hi! Up and running!';
   }
 
   async getOneJob(jobId: JobId) {
