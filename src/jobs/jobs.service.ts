@@ -19,7 +19,12 @@ export class JobsService {
   tableJobs = 'JobOffers';
 
   getHello(): string {
-    return 'Hi! Up and running!';
+    return `
+    Message: Welcome to the home office jobs API! 🛍️,
+    Author: Tailored by Francine Lima. 👩💻,
+    Github: https://github.com/francine1919 🔗,
+    Documentation_link: https://documenter.getpostman.com/view/19296644/2s9YJXakpQ 📋 
+`;
   }
 
   async getOneJob(jobId: JobId) {

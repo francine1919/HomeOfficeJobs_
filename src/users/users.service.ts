@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   Injectable,
   NotFoundException,
   UnauthorizedException,
@@ -21,7 +22,15 @@ export class UsersService {
   async signup(body: UserSignup) {
     const id = randomUUID();
     const pass = await this.hashManager.genHash(body.password);
-
+    if (
+      await this.db
+        .knex(this.tableUsers)
+        .select('email')
+        .where('email' === body.email)
+    )
+      throw new BadRequestException(
+        `The email:${body.email} is already registered on our database, please login.`,
+      );
     await this.db.knex(this.tableUsers).insert({
       id: id,
       name: body.name,
