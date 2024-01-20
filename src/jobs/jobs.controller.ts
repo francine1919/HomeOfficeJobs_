@@ -39,10 +39,6 @@ export class JobsController {
     private readonly auth: Authenticator,
   ) {}
 
-  @Get('')
-  getHello(): string {
-    return this.appService.getHello();
-  }
   @Get('/offer/:id')
   @UsePipes(new ZodValidationPipe(idParam))
   async getOneJob(

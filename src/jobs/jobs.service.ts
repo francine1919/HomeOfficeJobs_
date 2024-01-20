@@ -18,15 +18,6 @@ export class JobsService {
   constructor(private readonly db: KnexService) {}
   tableJobs = 'JobOffers';
 
-  getHello(): string {
-    return `
-    Message: Welcome to the home office jobs API! 🛍️,
-    Author: Tailored by Francine Lima. 👩💻,
-    Github: https://github.com/francine1919 🔗,
-    Documentation_link: https://documenter.getpostman.com/view/19296644/2s9YJXakpQ 📋 
-`;
-  }
-
   async getOneJob(jobId: JobId) {
     return await this.db.knex
       .select('*')

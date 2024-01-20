@@ -4,13 +4,13 @@ import { ZodValidationPipe } from 'nestjs-zod';
 import { APP_PIPE } from '@nestjs/core';
 import { JobsController } from './jobs/jobs.controller';
 import { JobsService } from './jobs/jobs.service';
-import { UsersController } from './users/users.controller';
-import { UsersService } from './users/users.service';
+
 import { UserModule } from './users/users.module';
+import { HealthController } from './health/health.controller';
 
 @Module({
   imports: [DatabaseModule, UserModule],
-  controllers: [JobsController],
+  controllers: [JobsController, HealthController],
   providers: [
     {
       provide: APP_PIPE,
